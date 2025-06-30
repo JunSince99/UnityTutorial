@@ -1,4 +1,5 @@
 using UnityEngine;
+using Cat;
 
 public class Material_LoopMap : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Material_LoopMap : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.isPlay)
+        return;
+
         Vector2 offset = Vector2.right * offsetSpeed * Time.deltaTime;
 
         renderer.material.SetTextureOffset("_MainTex", renderer.material.mainTextureOffset + offset);

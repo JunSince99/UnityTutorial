@@ -61,7 +61,7 @@ public class KnightController_Keyboard : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && animator.GetBool("isGround"))
         {
             animator.SetTrigger("Jump");
             knightRb.AddForceY(jumpPower, ForceMode2D.Impulse);
